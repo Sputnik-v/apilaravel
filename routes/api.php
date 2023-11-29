@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\SportController;
+use App\Http\Controllers\TagController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Route Api
 
 Route::get('/sports', [SportController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/tags', [TagController::class, 'index']);
