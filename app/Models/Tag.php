@@ -10,14 +10,14 @@ class Tag extends Model
 {
     use HasFactory;
 
-    public function posts(): BelongsToMany
-    {
-        return $this->belongsToMany(Post::class);
-    }
-
 
     protected $fillable = [
         'name', 'en_name',
         'active'
     ];
+
+    public function posts(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class);
+    }
 }
