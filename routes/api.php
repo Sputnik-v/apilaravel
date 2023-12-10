@@ -27,3 +27,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/sports', [SportController::class, 'index']);
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/tags', [TagController::class, 'index']);
+
+Route::get('/posts/{id}', [PostController::class, 'show']);
+Route::get('/sports/{id}', [SportController::class, 'show']);
+Route::get('/tags/{id}', [TagController::class, 'show']);
+
+

@@ -13,4 +13,9 @@ class TagController extends Controller
     {
         return TagResources::collection(Tag::all());
     }
+
+    public function show($id)
+    {
+        return new TagResources(Tag::with('posts')->findOrFail($id));
+    }
 }

@@ -14,4 +14,9 @@ class SportController extends Controller
     {
         return SportResources::collection(Sport::all());
     }
+
+    public function show($id)
+    {
+        return new SportResources(Sport::findOrFail($id));
+    }
 }

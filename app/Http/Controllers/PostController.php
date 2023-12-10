@@ -13,4 +13,9 @@ class PostController extends Controller
     {
         return PostResources::collection(Post::all());
     }
+
+    public function show($id)
+    {
+        return new PostResources(Post::with('sport')->with('tags')->findOrFail($id));
+    }
 }
